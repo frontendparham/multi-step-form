@@ -1,0 +1,81 @@
+.contents {
+  flex: 1;
+
+  @include respond(tab-port) {
+    background-color: $white;
+    position: relative;
+    z-index: 2;
+    border-radius: $border-radius;
+    width: 100%;
+  }
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include respond(tab-port) {
+    width: 90%;
+    padding: 3rem 2rem;
+  }
+
+  &__heading {
+    h2 {
+      font-size: 2.8rem;
+      color: $marineBlue;
+    }
+
+    p {
+      color: $coolGray;
+    }
+  }
+
+  &__main {
+    flex: 1;
+  }
+
+  &__navigate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+
+    @include respond(tab-port) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $white;
+      padding: 2rem;
+    }
+
+    &-btn {
+      transition: all 0.1s;
+
+      &--next {
+        margin-left: auto;
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+        background-color: $marineBlue;
+        color: $white;
+
+        &:hover {
+          background-color: $purplishBlue;
+        }
+      }
+
+      &--back {
+        color: $coolGray;
+
+        &:hover {
+          color: $color-text-primary;
+        }
+      }
+    }
+  }
+}

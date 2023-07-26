@@ -1,0 +1,72 @@
+.steps {
+  min-width: 25rem;
+  background-image: url(../../img/bg-sidebar-desktop.svg);
+  min-height: 50rem;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: $border-radius;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include respond(tab-port) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 20rem;
+    border-radius: 0;
+    background-size: 110%;
+    background-position-y: 85%;
+  }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  color: $white;
+  user-select: none;
+
+  &__number {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid $magnolia;
+    @include flexCenter;
+
+    @include respond(tab-port) {
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    span:first-of-type {
+      color: $cightGray;
+      font-size: 1.3rem;
+    }
+
+    span {
+      line-height: 1.3;
+    }
+  }
+
+  &--active {
+    .step__number {
+      color: $marineBlue;
+      background-color: $magnolia;
+    }
+  }
+}

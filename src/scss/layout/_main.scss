@@ -1,0 +1,26 @@
+.container {
+  margin: auto;
+  display: flex;
+  align-items: stretch;
+  background-color: $white;
+  width: 60%;
+  min-height: 60rem;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  gap: 2rem;
+
+  @include respond(tab-port) {
+    width: 60%;
+  }
+
+  @include respond(tab-port) {
+    background: none;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    min-height: auto;
+    width: 95%;
+    height: 75vh;
+    border-radius: 0;
+  }
+}

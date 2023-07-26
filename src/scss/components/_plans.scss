@@ -1,0 +1,137 @@
+.plans {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__cards {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+
+  &__card {
+    flex: 1;
+    border-radius: 0.5rem;
+    background-color: $white;
+    border: 0.1rem solid $cightGray;
+    padding: 1.2rem;
+    min-height: 20rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include respond(tab-port) {
+      width: 100%;
+      flex: 0;
+      min-height: auto;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    &:hover,
+    &.checked {
+      background-color: $magnolia;
+      border-color: $purplishBlue;
+    }
+
+    &-input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    &-img {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+
+    &-text {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-weight: 700;
+    }
+
+    &-price {
+      color: $coolGray;
+      font-size: 1.4rem;
+    }
+
+    &-offer {
+      font-size: 1.4rem;
+    }
+  }
+
+  /////////////////////////////////
+  &__toggle {
+    --size: 5rem;
+    background-color: $magnolia;
+    border-radius: 1rem;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: var(--size);
+      height: calc(var(--size) / 2);
+      background-color: #fff;
+      border: 0.2rem solid #222;
+      border-radius: 3rem 10rem 10rem 10rem;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.5s;
+    }
+
+    input[type="checkbox"]::before {
+      content: "";
+      position: absolute;
+      width: calc(var(--size) / 2);
+      height: calc(var(--size) / 2);
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) scale(0.7);
+      border: 0.3rem solid #222;
+      border-radius: 3rem 10rem 10rem 10rem;
+      background-color: #fde881;
+      box-sizing: border-box;
+      transition: all 0.5s;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #fde881;
+      border-radius: 10rem 10rem 3rem 10rem;
+    }
+
+    input[type="checkbox"]:checked::before {
+      left: 50%;
+      background-color: #fff;
+      border-radius: 10rem 10rem 3rem 10rem;
+    }
+  }
+}
